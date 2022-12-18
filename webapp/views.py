@@ -15,7 +15,7 @@ def loginUser(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home')
+            return redirect('worker')
         else:
             messages.error(request, 'Ошибка авторизации')
     else:
