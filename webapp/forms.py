@@ -23,3 +23,7 @@ class UserLoginForm(AuthenticationForm):
         model = CustomUser
         fields = ['username', 'email', 'password',]
 
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ('FIO','password', 'email',)

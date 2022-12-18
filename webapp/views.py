@@ -1,10 +1,12 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import UserLoginForm
-from django.contrib.auth import login
+from django.views.generic import UpdateView
 
-from .models import folder, file
+from .forms import UserLoginForm, UserEditForm
+from django.contrib.auth import login
+from django.contrib.auth.forms import PasswordChangeForm
+from .models import folder, file, CustomUser
 
 
 def loginUser(request):
@@ -43,3 +45,4 @@ def show_folder(request, folder_id):
         'folder_id': folder_id
     }
     return render(request, 'webapp/folder_page/index.html', context=context)
+

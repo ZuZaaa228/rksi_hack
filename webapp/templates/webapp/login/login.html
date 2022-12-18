@@ -22,7 +22,6 @@
 			</div>
 			<div ng-app ng-init="checked = false">
 				{% block content %}
-  <h2>Login</h2>
 
     <form method="post">
       {% csrf_token %}
@@ -30,9 +29,8 @@
 		  {% for f in form %}
 		  <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: <label>{{ f }}</label></p></label>
 		  {% endfor %}
-        <tr>
-          <td>&nbsp;</td>
-          <td><input type="submit" value="Submit"></td>
+        <tr >
+          <td class="btn-signin"><input type="submit" value="Войти" class="btn-animate"></td>
         </tr>
       </table>
     </form>
@@ -51,9 +49,7 @@
 <!--					<input class="form-styling" type="text" name="password" placeholder="" />-->
 <!--					<input type="checkbox" id="checkbox" />-->
 <!--					<label for="checkbox"><span class="ui"></span>Сохранить профиль</label>-->
-<!--					<div class="btn-animate">-->
-<!--						<a class="btn-signin">Войти</a>-->
-<!--					</div>-->
+
 <!--				</form>-->
 				<div class="success">
 					<svg width="270" height="270" xmlns="http://www.w3.org/2000/svg"
@@ -68,9 +64,7 @@
 				</div>
 			</div>
 
-			<div class="forgot">
-				<a href="#">Забыли пароль?</a>
-			</div>
+
 
 			<div>
 				<div class="cover-photo"></div>

@@ -137,20 +137,22 @@
 
 <div class="wrap-logo">
     <a onclick="javascript:history.back();return false;">
-        <img src="images/full-logo-ru.png" alt="">
+        <img src="{% static 'images/full-logo-ru.png' %}" alt="">
     </a>
 </div>
-<div>
+<div style="margin:30px">
     {% if request.user.is_authenticated %}
 
 {% for f in file%}
-{{f.title}}
-<a href="{{f.upload_file}}" download="{{f.upload_file}}">1</a>
+    Название файла <h3>{{f.title}}</h3>
+<a href="{{f.upload_file}}" download="{{f.upload_file}}">Скачать</a>
 <br>
+    <br>
+    <br>
 {% endfor %}
 
 {% else %}
-<h1>НАПИСАТЬ ЧТО ПОЛЬЗОВАТЕЛЬ НЕ АФТАРИЗВАН</h1>
+
 {% endif %}
 
 </div>
@@ -311,7 +313,7 @@
 </div>
 <!-- partial -->
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'></script>
-<script src="./script.js"></script>
+<script src="{% static 'js_home/script.js' %}"></script>
 
 </body>
 

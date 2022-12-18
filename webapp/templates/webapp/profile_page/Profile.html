@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="{% static 'profile_page/Profile.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="title">Аккаунт</h1>
+  
+  <form class="form" action="#">
+    {% for f in form %}
+		  <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: <label>{{ f }}</label></p></label>
+    {% endfor %}
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
